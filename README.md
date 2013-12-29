@@ -1,0 +1,56 @@
+# Database Drill Many To Many Schema 
+ 
+##Learning Competencies 
+
+##Summary 
+
+ Many-to-many relationships are relatively easy to understand, but slightly more complicated to implement.  We recommend that you solve the one-to-many challenge before moving into
+the many-to-many relationships.
+
+A newsletter has many subscribers, and a subscriber might subscribe to many newsletters.  A blog post can have many tags ("funny", "politics", etc.), and a given tag can be on many blog posts.  A book can have multiple authors, and an author can write many books.
+
+We model this relationship by creating a **join table**.  It looks like this:
+
+<pre>
++------------+       +---------------+       +--------------+
+| authors    |       | authors_books |       | books        |
++------------+       +---------------+       +--------------+
+| id         |&lt;--\   | id            |    /-&gt;| id           |
+| first_name |    \--| author_id     |   /   | title        |
+| last_name  |       | book_id       |--/    | published_at |
+| created_at |       +---------------+       | created_at   |
+| updated_at |                               | updated_at   |
++------------+                               +--------------+
+</pre>
+
+Here <code>authors_books</code> is the join table and it tells us which authors wrote which books.  The actual data about each author and each book is stored in one place: the <code>authors</code> and <code>books</code> tables, respectively.
+
+You might notice a ["Don't repeat yourself" priciple](http://en.wikipedia.org/wiki/Don't_repeat_yourself) at work.  Removing redundancy from a database schema so that each bit of data is stored in one and only one place is called **normalization**.  We'll learn more about that later.
+
+If you want, you can read about [database normalization on Wikipedia](http://en.wikipedia.org/wiki/Database_normalization) or [this decent article from Microsoft](http://support.microsoft.com/kb/283878).  The goal of normalization is to remove data redundancy.
+
+<!--
+**Resource:** Here's a [video](http://shereef.wistia.com/medias/fd684c61cb) of Jesse going over Schema Design on July 3, 2012.  **Spoiler Alert:** this will show you the schemas for some of the challenges!
+-->
+
+## Objectives
+
+### Implement the schema
+
+Implement the above author/book schema in the [SQL Designer](/sql.html).
+Remember to add the appropriate foreign keys!  
+
+Use [SQL Designer](/sql.html) to create your schema.  When you are done, save the XML of your schema and copy it into the gist. Then, take a screenshot of your final schema design, and upload it using a free image-upload service like [Min.us](http://minus.com).  Paste the URL of the screenshot into your gist (before your XML code).
+
+### Add more fields
+
+Each book also has one publisher, and a publisher can publish many books.  Add a <code>publishers</code> table to the schema above so it and <code>books</code> are in a one-to-many relationship.  
+
+The <code>publishers</code> table should have a <code>name</code> field, in addition to the fields we include by convention (primary key, timestamps, etc.). 
+
+##Releases
+###Release 0 
+
+##Optimize Your Learning 
+
+##Resources
