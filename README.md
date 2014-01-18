@@ -2,6 +2,9 @@
  
 ##Learning Competencies 
 
+* Design database schema from problem data
+* Model a one-to-many relationship in a relational database
+
 ##Summary 
 
  Many-to-many relationships are relatively easy to understand, but slightly more complicated to implement.  We recommend that you solve the one-to-many challenge before moving into
@@ -29,28 +32,21 @@ You might notice a ["Don't repeat yourself" priciple](http://en.wikipedia.org/wi
 
 If you want, you can read about [database normalization on Wikipedia](http://en.wikipedia.org/wiki/Database_normalization) or [this decent article from Microsoft](http://support.microsoft.com/kb/283878).  The goal of normalization is to remove data redundancy.
 
-<!--
-**Resource:** Here's a [video](http://shereef.wistia.com/medias/fd684c61cb) of Jesse going over Schema Design on July 3, 2012.  **Spoiler Alert:** this will show you the schemas for some of the challenges!
--->
+##Releases
 
-## Objectives
+###Release 0 : Implement the schema
 
-### Implement the schema
-
-Implement the above author/book schema in the [SQL Designer](/sql.html).
+Implement the above author/book schema.
 Remember to add the appropriate foreign keys!  
-
-Use [SQL Designer](/sql.html) to create your schema.  When you are done, save the XML of your schema and copy it into the gist. Then, take a screenshot of your final schema design, and upload it using a free image-upload service like [Min.us](http://minus.com).  Paste the URL of the screenshot into your gist (before your XML code).
-
-### Add more fields
 
 Each book also has one publisher, and a publisher can publish many books.  Add a <code>publishers</code> table to the schema above so it and <code>books</code> are in a one-to-many relationship.  
 
 The <code>publishers</code> table should have a <code>name</code> field, in addition to the fields we include by convention (primary key, timestamps, etc.). 
 
-##Releases
-###Release 0 
+Use [SQL Designer][] to create your schema.  When you are done, save the XML of your schema and copy it to the source file `many_to_many_schema.md`. Then, take a screenshot of your final schema design, and upload it using a free image-upload service like [Min.us](http://minus.com).  Paste the URL of the screenshot into your file (before your XML code). 
 
-##Optimize Your Learning 
+<!-- ##Optimize Your Learning  -->
 
 ##Resources
+
+* [SQL Designer](https://socrates.devbootcamp.com//sql.html)
