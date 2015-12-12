@@ -49,4 +49,4 @@ Use [SQL Designer][] to create your schema.  When you are done, save the XML of 
 
 ##Resources
 
-* [SQL Designer](https://socrates.devbootcamp.com//sql.html)
+* [SQL Designer](https://schemadesigner.devbootcamp.com/)
